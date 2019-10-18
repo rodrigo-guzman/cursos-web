@@ -1,0 +1,29 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <input type="text" name="title" [(ngModel)]="item.title" placeholder="Title" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <textarea name="desription" [(ngModel)]="item.description" placeholder="Description" rows="2" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="url" name="image" [(ngModel)]="item.image" placeholder="Image" class="form-control">
+          </div>
+          <button class="btn btn-success btn-block" (click)="edit ? updateItem() : saveNewItem()">
+            GUARDAR
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-4">
+  <div class="card card-body text-center">
+      <img [src]="item.image =='' ? '/assets/no-image-icon-11.PNG' : item.image" class="card-img-top">
+      <h3>{{item.id}}.{{item.title == '' ? 'Escribir Título' : item.title}}</h3>
+      <p>{{item.description == '' ? 'Escribir Descripción' : item.description}}</p>
+      <p>{{item.created_at | date: 'yyyy-MM-dd'}}</p>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+
+
+<hr>
+<div class="col-md-4" *ngFor="let item of items">
+  <div class="card text-center">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        {{item.title}}
+        <button class="btb btn-danger" (click)="deleteItem(item.id)">
+            <i class="far fa-trash-alt"></i>
+        </button>  
+    </div>
+    <img [src]="item.image" class="card-img-top" style="height:300px">
+    <div class="card-body">
+        <p>{{item.description}}</p>
+        <a [routerLink]="['/items/edit', item._id]" class="btn btn-info btn-block">
+          EDITAR
+        </a>
+    </div>
+  </div>
+
+</div>
